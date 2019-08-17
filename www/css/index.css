@@ -1,0 +1,443 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+*
+
+body {                 /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+}
+
+.tela_inicial_title{
+
+text-align:center-left;
+font-family: Serif;
+font-size:180%;
+margin-top: 5%;
+}
+.apparent-message {
+  width: 95%;
+  border-style: solid;
+  border-width: 2px;
+}
+.imagem-aviso{	
+  width: 50%;
+  height: 50%;
+}
+.apparent-message .apparent-message-icon {
+	
+	
+  flex: 0 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 10px #000;
+ 
+  
+}
+
+
+.message-container {
+  display: flex;
+  
+}
+.message-container .content-container {
+  flex-grow: 1;
+  max-width: 100%;
+  justify-content: center;
+  padding-left: 15px;
+  background-color: #fff;
+  
+  
+}
+.message-container .content-container .message-header {
+   margin-top: 5px;
+  font-size: 20px;
+  
+}
+.message-container .content-container .message-body {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #515151;
+  margin-bottom:5px;
+}
+.message-container .content-container .message-action {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+   margin-right: 50px;
+}
+
+.warning-message {
+  background-color: #f39b0e;
+  border-color: #f39b0e;
+  
+}
+
+.warning-message .message-action,
+.warning-message .message-header{
+  color: #f39b0e;
+}
+
+
+
+
+
+
+
+.Power_Flow_title{
+font-family: arial;
+margin-top:1%;
+font-size:120%;	
+}
+.button_index {
+background-color:#CD0000;
+border:none;
+color:white;
+margin-left:5%;
+margin-right:5%;
+width: 35%;
+height: 60px;
+font-family: arial;
+font-size: 90%;
+   padding:0%;
+   box-shadow:0 2px 2px #000000;
+}
+
+.button_index:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+
+#index_buttons {
+text-align:center;
+}
+
+
+
+#superior {
+top: -10%; 
+left: 0px;
+height: 55px;
+}
+
+h1 {
+top: -3.2%;
+left: 0%;
+  background-color: #8B0000;
+  width: 100%;
+font-family: Arial;
+ color: white;
+padding:10px;
+font-size: 20px;
+position:fixed;
+line-height: 250%;
+text-align:center-left;
+margin-bottom:5px;
+margin-top:10px;
+}
+
+
+.button_open {
+  background-color: #CD0000;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #FFFFFF;
+   box-shadow:0 2px 2px #000000;
+}
+
+.button_open:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+
+.button_close {
+  background-color: #FFFFFF;
+  color: #DC143C;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #000000;
+
+   box-shadow:0 2px 2px #000000;
+}
+
+.button_close:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+
+.button_option {
+  background-color: #BEBEBE;
+  background-position: center;
+  border: none;
+  color: #CD0000;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 100%;
+  margin: 2% 0%;
+  cursor: pointer;
+  font-weight: bold;
+  border-width: medium;
+  border-style: solid;
+  border-color: #FFFFFF;
+}
+
+
+.button_del {
+  background-image: url("excluir.png");
+  background-color: #DC143C;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #FFFFFF;
+   padding:2px;
+   box-shadow:0 2px 2px #000000;
+
+}
+
+.button_del:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+
+
+.button_edit {
+  background-image: url("editar.png");
+  background-color: #DC143C;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #FFFFFF;
+   padding:2px;
+   box-shadow:0 2px 2px #000000;
+
+}
+
+.button_edit:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+.button_config {
+	  background-image: url("configuracoes.png");
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border-width: medium;
+  border-style: none;
+  border-color: #FFFFFF;
+   padding:2px;
+ 
+
+}
+.button_config:active{
+   position:relative;
+  top:2px;
+  box-shadow:none;
+}
+#alinhamento_config{
+position:fixed;
+top:1%;
+right:6px;
+}
+
+.LT_icon {
+  background-color: #FFFFFF;
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #000000;
+}
+
+.Image_screen {
+  width: 100%;
+  height: 50%;
+  text-align:center;
+  margin-top:2%;
+}
+
+.barras_item_lista {
+  background-color: transparent;
+  width: 80px;
+  height: 80px;
+}
+
+.linhas_item_lista {
+  background-color: transparent;
+  width: 80px;
+  height: 80px;
+}
+
+h5 {
+font-family: Arial;
+text-align: left;
+ font-size: 85%;
+ line-height: 0;
+ font-weight: normal;
+}
+
+.título {
+font-family: Arial;
+ font-size: 14px;
+ line-height: 0;
+ font-weight: bold;
+}
+
+#menu{
+position:fixed;
+bottom:0px;
+left:10px;
+}
+
+.select{
+padding: 4px 5px;
+border-width: thin;
+border-style: none;
+padding-left:0%;
+font-size:105%;
+}
+
+.fonte{
+color:black;
+font-size:100%;
+margin:0px;
+padding-right:0px;
+padding-bottom:2%;	
+}
+
+#box{
+width: 95%;
+padding: 8px 5px;
+
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.dados {
+margin-right: 2%;
+margin-left: 2%;
+width: 65px;
+padding: 5px 5px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+font-size:100%;
+font-family: arial;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+
+.button_insert {
+  background-color: #DC143C;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  width: 92%;
+  height: 40px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #FFFFFF;
+  padding:2px;
+  box-shadow:0 2px 2px #000000;
+  color:white;
+  font-family: arial;
+  font-size: 18px;
+
+}
+
+.button_insert:active{
+  position:relative;
+  top:2px;
+  box-shadow:none;
+}
+
+#th_resultado {
+	background-color: gray;
+	width:100px;
+	text-align: center;
+}
+
+#tabela_resultado {
+	background-color: transparent;
+	width:200px;
+	text-align: center;
+}
+
+.tab button {
+  background-color: inherit; 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 49%;
+  height: 40px;
+  color:hsl(0, 0%, 40%);   
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+ color: black;
+  border-bottom: 2px solid 	#000000
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}

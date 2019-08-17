@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />   
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>Configurações</title>
+</head>
+<body style="margin-left:5%;margin-top:15%;" onload="Carrega_config()">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+
+    </script>	
+	
+<div id="superior">
+<h1>Configurações</h1>
+</div>
+	
+            				<div class="apparent-message warning-message">
+  <div class="message-container">
+    <div class="apparent-message-icon fa fa-fw fa-2x fa-exclamation-triangle">
+	<td width='100'><img src='img/aviso.png' class="imagem-aviso"></td>
+        </div>
+        <div class="content-container">
+            <div class="message-header">
+                <span>Aviso</span>
+            </div>
+            <div class="message-body">Utilize ponto para indicar números decimais.</div>
+           
+        </div>
+  </div>
+</div> 
+<br>
+    		<p class="fonte">Erro Máx:</p> 
+    			<input type="tel" pattern="[0-9]{8}"  maxlength="8" size="4" name="rs" id="Erro_max" class="dados" />
+    			<br><br>
+			<p class="fonte">Número Máximo de Iterações:</p>
+				<input type="tel" pattern="[0-9]{8}"  maxlength="8" size="4" name="rs" id="Num_iterações" class="dados"/>
+				<br><br>
+			<p class="fonte">S<sub>base</sub> (MVA):</p>
+				<input type="tel" pattern="[0-9]{8}"  maxlength="8" size="4" name="rs" id="S_base" class="dados"/>
+				<br><br>
+    			<input type="button" class="button_insert" value="CONFIRMAR" onclick="confirmar_configurações()">
+
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />   
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+					<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <title>Entrada de Dados</title>
+</head>
+<body style="margin-left:5%;margin-top:15%;">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+function ativacampos()
+{
+
+selecionado = document.getElementById("tipocomp").value;
+if(selecionado=="Barra")
+{
+document.getElementById("opcoes_barra").style.display = "inline";
+document.getElementById("opcoes_linha").style.display = "none";
+document.getElementById("rs").value = "";
+document.getElementById("xs").value = "";
+document.getElementById("bsh").value = "";
+document.getElementById("linhaorig").value = "";
+document.getElementById("linhadest").value = "";
+}
+else //selecionado é Linha
+{
+	
+document.getElementById("opcoes_barra").style.display = "none";
+document.getElementById("opcoes_linha").style.display = "inline";	
+}
+}
+
+function ativadados()
+{
+escolhido = document.getElementById("tipobar").value;
+if(escolhido=="V0")
+{
+document.getElementById("indicadorV").style.display = "inline";
+document.getElementById("V").style.display = "inline";
+document.getElementById("V").value = "1";
+document.getElementById("V").disabled = true;
+document.getElementById("indicadortheta").style.display = "inline";
+document.getElementById("theta").style.display = "inline";
+document.getElementById("theta").value = "0";
+document.getElementById("theta").disabled = true;
+document.getElementById("indicadorP").style.display = "none";
+document.getElementById("P").style.display = "none";
+document.getElementById("P").value = "";
+document.getElementById("P").disabled = true;// add agr
+document.getElementById("indicadorQ").style.display = "none";
+document.getElementById("Q").style.display = "none";
+document.getElementById("Q").value = "";
+document.getElementById("Q").disabled = true;// add agr
+}
+
+else if(escolhido=="PV")//caso PV
+{
+document.getElementById("indicadorV").style.display = "inline";
+document.getElementById("V").style.display = "inline";
+document.getElementById("V").value = "";
+document.getElementById("V").disabled = false;
+document.getElementById("indicadortheta").style.display = "none";
+document.getElementById("theta").style.display = "none";
+document.getElementById("theta").value = "";
+document.getElementById("theta").disabled = true;// original era disabled
+document.getElementById("indicadorP").style.display = "inline";
+document.getElementById("P").style.display = "inline";
+document.getElementById("P").value = "";
+document.getElementById("P").disabled = false;
+document.getElementById("indicadorQ").style.display = "none";
+document.getElementById("Q").style.display = "none";
+document.getElementById("Q").disabled = true; // add agr
+document.getElementById("Q").value = "";
+}
+
+else //caso PQ
+{
+document.getElementById("indicadorV").style.display = "none";
+document.getElementById("V").style.display = "none";
+document.getElementById("V").value = "";
+document.getElementById("V").disabled = true;
+document.getElementById("indicadortheta").style.display = "none";
+document.getElementById("theta").style.display = "none";
+document.getElementById("theta").value = "";
+document.getElementById("theta").disabled = true;
+document.getElementById("indicadorP").style.display = "inline";
+document.getElementById("P").style.display = "inline";
+document.getElementById("P").value = "";
+document.getElementById("P").disabled = false;// add agr
+document.getElementById("indicadorQ").style.display = "inline";
+document.getElementById("Q").style.display = "inline";
+document.getElementById("Q").value = "";
+document.getElementById("Q").disabled = false;// add agr
+}
+
+}
+function EnterTab(InputId,InputId1,InputId2,Evento){
+     escolhido = document.getElementById("tipobar").value;
+	 selecionado = document.getElementById("tipocomp").value;
+
+		if(Evento.keyCode == 13){		
+
+			document.getElementById(InputId).focus();
+			document.getElementById(InputId1).focus();
+			
+		if(escolhido=="V0"&& selecionado=="Barra"){
+		   document.getElementById(InputId2).focus();
+		}	
+
+		}
+
+	}
+
+
+    </script>
+	
+	
+	
+	
+<div id="superior">
+<h1>Entrada de dados</h1>
+</div>
+ <p class="fonte">Informe o Nome do Componente(Opcional):</p> 
+	
+    <input type="hidden" id="barras_id_delete">
+	<input type="hidden" id="linhas_id_delete">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+			
+    			<input type="text" class="form-control" id="box" style="margin-bottom:8%;" onkeydown="javascript:EnterTab('P','rs','inserir',event)"/>
+    <br>			
+<div class="apparent-message warning-message">
+  <div class="message-container">
+    <div class="apparent-message-icon fa fa-fw fa-2x fa-exclamation-triangle">
+	<td width='100'><img src='img/aviso.png' class="imagem-aviso"></td>
+        </div>
+        <div class="content-container">
+            <div class="message-header">
+                <span>Aviso</span>
+            </div>
+            <div class="message-body">Utilize ponto para indicar números decimais.</div>
+           
+        </div>
+  </div>
+</div> 
+<br>
+				<p class="fonte">Selecione o Tipo de Componente:</p>
+											<select id="tipocomp" name="selectcomp" onchange="ativacampos()" class="select">
+											<option value="Barra" selected>Barra </option>
+											<option value="Linha">Linha</option>
+											</select></br></br>
+					<div id="opcoes_linha" style="display:none;">								
+		<label id=indicadorrs><p class="fonte" style="display:inline-block;">Rs</p>:</label><input type="tel" pattern="(?:\.[0-9])" maxlength="8" size="4" name="rs" id="rs" class="dados" onkeydown="javascript:EnterTab('xs',0,0,event)"/>
+		<label id=indicadorxs><p class="fonte" style="display:inline-block;">Xs:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4" name="xs" id="xs" class="dados" onkeydown="javascript:EnterTab('bsh',0,0,event)"/></br></br>
+		<label id=indicadorjb><p class="fonte" style="display:inline-block;">B<sup>sh</sup>:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4"  name="bsh" id="bsh" class="dados"onkeydown="javascript:EnterTab('linhaorig',0,0,event)"/></br></br>
+		<label id=indicadororig><p class="fonte" style="display:inline-block;">Entre Barras:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="3" size="3" name="origem" id="linhaorig" class="dados"onkeydown="javascript:EnterTab('linhadest',0,0,event)"/>
+		<label id=indicadordest><p class="fonte" style="display:inline-block;">e</p></label><input type="tel" pattern="[0-9]{8}"  maxlength="3" size="3" name="destino" id="linhadest" class="dados"onkeydown="javascript:EnterTab('inserir',0,0,event)"/></br></br>
+		</div>
+		
+		<div id="opcoes_barra">
+		<label id=indicadortipobar><p class="fonte" style="display:inline-block;">Tipo de Barra:</p></label><select id="tipobar" name="selectbar" onchange="ativadados()" class="select">
+													<option value="V0" selected>V&theta;</option>
+													<option value="PV">PV</option>
+													<option value="PQ">PQ</option>
+													</select></br></br>
+		
+		
+			<label id=indicadorP style="display:none;"><p class="fonte" style="display:inline-block;">P:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4" name="P" id="P" style="display:none;" class="dados" onkeydown="javascript:EnterTab('Q','V',0,event)"/>
+			<label id=indicadorQ style="display:none;"><p class="fonte" style="display:inline-block;">Q:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4" name="Q" id="Q" style="display:none;" class="dados" onkeydown="javascript:EnterTab('inserir',0,0,event)"/>
+			<label id=indicadorV><p class="fonte" style="display:inline-block;">V:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4" name="V" id="V" disabled="true" value="1" class="dados" onkeydown="javascript:EnterTab('inserir',0,0,event)"/>
+			<label id=indicadortheta><p class="fonte" style="display:inline-block;">&theta;:</p></label><input type="tel" pattern="[0-9]{8}" maxlength="8" size="4" name="Theta" id="theta" disabled="true" value="0" class="dados"/></br></br>
+		</div>							
+											
+											
+    			<br> 
+    			<br>
+    			<input type="button" class="button_insert" value="INSERIR" onclick="barras_insert()" id="inserir">
+    			<br>
+    			<br>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12">
+    			<table class="table">
+    				<thead>
+    					<tr>
+    					</tr>
+    				</thead>
+			
+    				<tbody id ="barras_listagem">
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+		 <div class="row">
+    		<div class="col-md-12">
+    			<table class="table">
+    				<thead>
+    					<tr>
+    					</tr>
+    				</thead>
+			
+    				<tbody id ="linhas_listagem">
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    </div> 
+
+</body>
+</html>

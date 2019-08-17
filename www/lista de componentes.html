@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />  
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title> LISTA DE COMPONENTES </title> 
+</head> 
+
+ <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+    <script type="text/javascript">
+		 // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+	window.location='index.html';
+	
+    }
+   
+	
+function SUBMENU_VISÍVEL() {
+  document.getElementById("addcompo").hidden = false;
+  document.getElementById("calcflux").hidden = false;;
+  document.getElementById("X").hidden = false;;
+  document.getElementById("apagtudo").hidden = false;;
+}
+
+function SUBMENU_INVISÍVEL() {
+  document.getElementById("addcompo").hidden = true;
+  document.getElementById("calcflux").hidden = true;
+  document.getElementById("X").hidden = true;
+  document.getElementById("apagtudo").hidden = true;
+  onLoad();
+
+}
+
+
+</script>
+
+<div id="superior">
+  <h1>Lista de Componentes</h1>
+  <div id="alinhamento_config">
+<input type='button' class='button_config' onclick="window.location='configuracoes.html'">
+</div>
+</div>
+    <input type="hidden" id="barras_id_delete">
+	<input type="hidden" id="linhas_id_delete">
+
+	<div class="row">
+    		<div class="col-md-12">
+    			<table class="table">
+    				<thead>
+    					<tr>
+    					</tr>
+    				</thead>
+			
+    				<tbody id ="barras_listagem">
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+		 <div class="row">
+    		<div class="col-md-12">
+    			<table class="table">
+    				<thead>
+    					<tr>
+    					</tr>
+    				</thead>
+			
+    				<tbody id ="linhas_listagem">
+    				</tbody>
+    			</table>
+    		</div>
+</div>
+<body onload="SUBMENU_INVISÍVEL()">
+<div id="menu">
+<button class="button_close" id="X" onclick="SUBMENU_INVISÍVEL()" hidden>x</button></br></br>
+<button class="button_option" id="addcompo" onclick="window.location = 'addcomponente.html'"hidden>ADD COMPONENTE</button></br></br>
+<button class="button_option" id="calcflux"onclick="window.location = 'calcularfluxo.html'" hidden>CALCULAR FLUXO</button></br></br>
+<button class="button_option" id="apagtudo"onclick="nova_simulação()" hidden>APAGAR TUDO</button></br></br>
+<button class="button_open" onclick="SUBMENU_VISÍVEL()">+</button></br></br>
+</div>
+
+ <script>
+	barras_view();
+    linhas_view();
+ </script>
+
+</body>
+	
+</html>

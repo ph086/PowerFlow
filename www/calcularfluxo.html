@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head> 
+ <link rel="stylesheet" href="css/carregamento-de-pagina.css"/>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+	
+	<title> Fluxos Calculados </title> 
+
+ </head>
+
+ <div id="superior">
+<h1>Fluxos Calculados</h1>
+</div>
+
+<body onload="calcular_fluxo()">
+  
+ <div class="tab" align="center" id="fluxos_linhas" style="display:none;">
+  <button class="tablinks" onclick="openCity(event, 'resultados')" id="defaultOpen">FLUXOS</button>
+  <button class="tablinks" onclick="openCity(event, 'resultados2')">TENSÕES</button>
+  
+</div>
+
+<div id="status_message" align="center">
+</div>
+
+
+<div id="resultados" align="center" class="tabcontent">
+</div>
+<div id="resultados2" align="center" class="tabcontent">
+</div>
+
+</body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/math.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	 <script type="text/javascript" src="js/pace.js"></script>
+  <script>
+  // Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
+
